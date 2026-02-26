@@ -113,16 +113,16 @@ pipeline {
                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
                         sh """
                         rm -rf amazon
-                        git clone https://${GITHUB_TOKEN}@github.com/yasindumalmith/amazon-k8s-deploy.git helm-repo
+                        git clone https://${GITHUB_TOKEN}@github.com/yasindumalmith/amazon-k8s-deploy.git 
                         cd amazon
 
                         # Update image tag in values.yaml
-                        sed -i 's/tag:.*/tag: "${BUILD_NUMBER}"/' values.yaml
+                        sed -i 's/tag:.*/tag: "${BUILD_NUMBER}"/' amazon/values.yaml
 
                         git config user.email "jenkins@ci.com"
                         git config user.name "jenkins"
 
-                        git add values.yaml
+                        git add amazon/values.yaml
                         git commit -m "Update amazon image to ${BUILD_NUMBER}"
                         git push origin main
                         """
