@@ -112,9 +112,9 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
                         sh """
-                        rm -rf helm-repo
+                        rm -rf amazon
                         git clone https://${GITHUB_TOKEN}@github.com/yasindumalmith/amazon-k8s-deploy.git helm-repo
-                        cd helm-repo
+                        cd amazon
 
                         # Update image tag in values.yaml
                         sed -i 's/tag:.*/tag: "${BUILD_NUMBER}"/' values.yaml
