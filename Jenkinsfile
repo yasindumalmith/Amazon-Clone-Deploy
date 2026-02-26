@@ -113,7 +113,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
                         sh """
                         rm -rf amazon
-                        git clone https://${GITHUB_TOKEN}@github.com/yasindumalmith/amazon-k8s-deploy.git 
+                        git clone https://${GITHUB_TOKEN}@github.com/yasindumalmith/amazon-k8s-deploy.git amazon
                         cd amazon
 
                         # Update image tag in values.yaml
