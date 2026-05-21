@@ -6,6 +6,8 @@ This project demonstrates a **real-world DevSecOps CI/CD pipeline** to build, sc
 
 The pipeline integrates **security, quality checks, container scanning, and automated Kubernetes deployments**, closely following **industry best practices**.
 
+Demo Link:- [https://youtu.be/SP1isNvj6io](https://youtu.be/SP1isNvj6io)
+
 ### **🧰 Technologies Used**
 
 **🔹 CI / DevSecOps**
